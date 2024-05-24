@@ -1,20 +1,16 @@
 class Solution(object):
     def matchPlayersAndTrainers(self, players, trainers):
-        """
-        :type players: List[int]
-        :type trainers: List[int]
-        :rtype: int
-        """
         players.sort()
         trainers.sort()
         match = 0
-        use = [False] * len(trainers)
+        pptr = 0
+        tptr = 0
 
-        for player in players:
-            for j, trainer in enumerate(trainers):
-                if not use[j] and player <= trainer:
-                    match += 1
-                    use[j] = True
-                    break
-
+        while pptr < len(players) and tptr < len(trainers):
+            if players[pptr] <= trainers[tptr]:
+                match += 1
+                pptr += 1
+                tptr += 1
+            else:
+                tptr += 1
         return match
