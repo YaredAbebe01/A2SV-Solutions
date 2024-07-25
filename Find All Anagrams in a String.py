@@ -4,8 +4,7 @@ class Solution(object):
         :type s: str
         :type p: str
         :rtype: List[int]
-        """
-        from collections import Counter        
+        """    
         ns, np = len(s), len(p)      
         pc = Counter(p)
         sc = Counter()    
