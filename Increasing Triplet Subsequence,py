@@ -1,0 +1,18 @@
+class Solution(object):
+    def increasingTriplet(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: bool
+        """
+        if len(nums) < 3:
+            return False
+        fir = float('inf')
+        sec = float('inf')
+        for num in nums:
+            if num <= fir:
+                fir = num 
+            elif num <= sec:
+                sec = num 
+            else:
+                return True 
+        return False
